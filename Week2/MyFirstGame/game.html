@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Choose Your Character</title>
+    <h1 style="color: white; text-align: center; font-family: 'Courier New', Courier, monospace;" >Choose Your Character</h1>
+    </head>
+    <body style="background-color:rgb(0, 0, 0)"></body>>
+    <img src="CharacterScreenFF.jpg" style="width: 100%"></img>
+    
+   <li style="text-align: center;">
+    <label for="name"style= "color: white; text-align: center; font-family: 'Courier New', Courier, monospace;">Name:</label>
+
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
+  minlength="4"
+  maxlength="8"
+  size="10" />
+   </li>
+<li style="text-align: center;">
+    <label for="class-select" style= "color: white; text-align: center; font-family: 'Courier New', Courier, monospace;" style="width: 100%">Choose a Class:</label>
+    <select name="class" id="class-select">
+  <option value="">--Please choose an option--</option>
+  <option value="warrior">Warrior</option>
+  <option value="white mage">White Mage</option>
+  <option value="thief">Thief</option>
+  <option value="black-mage">Black Mage</option>
+</select>
+</li>
+<div style="display: flex; justify-content: flex-end;">
+<button style="text-align: center;" class="done-button"  style="width: 10%"><h3 style="text-align: center;"><a href="./GameEnd.html">Done</h3></button>
+</div>
+    
+    </body>
+</html>
