@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard Creator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Redaction+50:ital,wght@0,400;0,700;1,400&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <style>
+        body {
+        background-image: url("WizardsOnly/assets/WizardBG.jpg");
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+        }
+
+        .WizardStarter {
+            border: 1px;
+            width: max-content;
+            height: max-content;
+            background-color: darkmagenta;
+            display: grid;
+            padding: 1em;
+            margin: 1em;
+            font-family: "Uncial Antiqua";
+            row-gap: 50px;
+            
+            
+        }
+
+        .wizardResult {
+        padding: 1em;
+        margin: 1em;
+        width: max-content;
+        display: grid;
+        background-color: darkblue;
+        color: aliceblue;
+        font-family: "Uncial Antiqua";
+        column-gap: 50px;
+        
+
+        }
+
+        #castBtn {
+        margin: 5px;
+        padding: 5px;
+        width: 50px;
+        background-color: darkgoldenrod;
+        border-style: inset;
+        font-family: "Uncial Antiqua";
+        }
+
+        #Recast {
+            display: grid;
+            justify-content: end;
+            padding: 5px;
+            font-family: "Uncial Antiqua";
+            background-color: darkgoldenrod;
+            border-style: groove;
+            border-width: 5px;
+
+            
+        }
+       
+        .selected {
+            border: 5px groove orange;
+        }
+
+       
+        
+
+        
+    </style>
+<h1 style="color: aliceblue; font-family: Uncial Antiqua;">Create Your Wizard</h1>
+    <div class="WizardStarter">
+        <div id="Name"> 
+        <label for="wizName">Wizard Name:</label><br>
+        <input type="text" id="wName">
+        </div>
+
+        <div id="staff">
+            <form id="staffForm">
+            <label for="staff">Which describes you the best?</label>
+            <select id="staffSelect">
+                <option id="strongWill" value="WizardsOnly\assets\gold staff.png">Strong Willed</option>
+                <option value="WizardsOnly\assets\blue staff.png">Kind</option>
+                <option value="WizardsOnly\assets\purple staff.png">Spontaneous</option>
+                
+            </select>
+            <button id="castBtn">Cast</button>
+            </form>
+            
+        </div>
+        
+        <div class="potions">
+            <h2>Pick Your Potion</h2>
+            <img class="potions" src="WizardsOnly\assets\potion1.jpg"  onclick="this.classList.toggle('selected')" style="width: 60px; padding: 1em; cursor: pointer">
+            <img class="potions" src="WizardsOnly\assets\potion2.jpg"  onclick="this.classList.toggle('selected')" style="width: 150px; padding: 1em; cursor: pointer">
+            <img class="potions" src="WizardsOnly\assets\potion3.jpg"  onclick="this.classList.toggle('selected')" style="width: 100px; padding: 1em; cursor: pointer">
+            <img class="potions" src="WizardsOnly\assets\potion4.jpg"  onclick="this.classList.toggle('selected')" style="width: 130px; padding: 1em; cursor: pointer">
+        </div>
+
+        
+    </div>
+    <div class="wizardResult">
+            <h2>Your Wizard:</h2>
+            <h3 id="nameResult"></h3>
+            <div id="wizGear">
+            <img id="tempWiz" src="WizardsOnly\assets\wizardOutline.jpg">
+            <img id="tempPic" src="WizardsOnly\assets\placeholder.png">
+            </div>
+        </div>
+    <button id="Recast">Recast Spell</button>
+
+    <script>
+    //Gretting:    
+   window.addEventListener("load", function() {
+     alert("Wizards only");
+    });
+
+//Inputing Wizard Name
+    const input = document.getElementById('wName');
+    const button = document.getElementById('castBtn');
+    const display = document.getElementById('nameResult');
+
+    button.addEventListener('click', function() {
+        display.textContent= input.value;
+    });
+ 
+//Recast Spell
+    const reloadBtn = document.getElementById("Recast");
+
+    reloadBtn.addEventListener("click", () => {
+    window.location.reload();
+});
+
+//Selecting a Staff
+const form = document.getElementById('staffForm');
+const selectMenu = document.getElementById('staffSelect');
+const image = document.getElementById('tempPic');
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    image.src = selectMenu.value;
+    });
+
+  </script>
+</body>
+</html>
+
